@@ -1,0 +1,132 @@
+---
+// Hero.astro
+---
+
+<section id="home" class="pt-36 pb-24">
+  <div class="container">
+    <div class="flex flex-wrap items-center">
+      <div class="mb-10 w-full px-4 md:w-1/2 xl:pl-32">
+        <h1
+          class="text-secondary reveal mb-3 text-sm font-bold tracking-widest uppercase"
+        >
+          Hello
+        </h1>
+        <h2
+          class="text-dark reveal mb-5 text-4xl font-extrabold md:text-5xl lg:text-6xl lg:leading-tight"
+        >
+          I'm <br class="hidden md:block" />
+          <span id="auto-type" class="text-primary relative"></span>
+        </h2>
+        <p
+          class="text-secondary reveal mb-8 max-w-md leading-relaxed font-medium lg:text-lg"
+        >
+          Mahasiswa Teknik Informatika <br class="hidden md:block" />
+          & Web Developer
+        </p>
+        <div
+          class="reveal flex flex-col items-stretch gap-4 sm:flex-row sm:items-center"
+        >
+          <a
+            href="#contact"
+            class="text-dark border-primary bg-primary hover:shadow-primary/50 w-full rounded-full border-2 px-8 py-3.5 text-center text-base font-bold shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-amber-500 sm:w-auto"
+          >
+            Hire Me
+          </a>
+          <a
+            href="#portfolio"
+            class="border-primary hover:bg-primary hover:text-dark w-full rounded-full border-2 px-8 py-3.5 text-center text-base font-bold text-amber-700 transition-all duration-300 ease-in-out hover:-translate-y-1 sm:w-auto"
+          >
+            View Works
+          </a>
+        </div>
+      </div>
+      <div class="reveal w-full px-4 md:w-1/2">
+        <div class="relative right-0 mt-10 flex justify-center lg:mt-0">
+          <div
+            class="tilt-element relative z-10 flex h-72 w-72 items-end justify-center overflow-hidden rounded-[30%_70%_70%_30%/30%_30%_70%_70%] bg-[#FFF3E0] shadow-xl sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[460px] lg:w-[460px]"
+            style="transition: transform 0.15s ease-out;"
+          >
+            <img
+              src="/img/hisyamsz.png"
+              alt="Hisyam Santoso"
+              class="z-20 w-full max-w-[320px] object-cover object-bottom md:max-w-[380px] lg:max-w-[420px]"
+            />
+          </div>
+          <span
+            class="absolute top-10 left-10 -z-10 animate-[spin_10s_linear_infinite] md:-left-4 lg:-left-12"
+          >
+            <svg
+              width="120"
+              height="120"
+              viewBox="0 0 100 100"
+              class="text-primary/30 fill-current"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="40"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-dasharray="10 10"
+                fill="none"></circle>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Typing Effect
+  const dynamicText = document.querySelector('#auto-type');
+  const words = ['Hisyam Santoso', 'a Student', 'in College'];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typeEffect = () => {
+    if (!dynamicText) return;
+    const currentWord = words[wordIndex];
+    const currentChar = currentWord.substring(0, charIndex);
+    dynamicText.textContent = currentChar || '\u200B';
+    dynamicText.classList.add('stop-blinking');
+
+    if (!isDeleting && charIndex < currentWord.length) {
+      charIndex++;
+      setTimeout(typeEffect, 200);
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(typeEffect, 100);
+    } else {
+      isDeleting = !isDeleting;
+      dynamicText.classList.remove('stop-blinking');
+      wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+      setTimeout(typeEffect, 1000);
+    }
+  };
+
+  typeEffect();
+
+  // 3D Tilt Effect
+  const tiltElement = document.querySelector('.tilt-element') as HTMLElement;
+  if (tiltElement) {
+    tiltElement.addEventListener('mousemove', (e: MouseEvent) => {
+      const rect = tiltElement.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -15;
+      const rotateY = ((x - centerX) / centerX) * 15;
+
+      tiltElement.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    tiltElement.addEventListener('mouseleave', () => {
+      tiltElement.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    });
+  }
+</script>

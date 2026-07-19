@@ -1,0 +1,39 @@
+---
+import type { TimelineItemType } from '../../data/timeline';
+
+interface Props {
+  item: TimelineItemType;
+}
+
+const { item } = Astro.props;
+---
+
+<div class="reveal relative pb-10 pl-8">
+  <span
+    class="bg-primary absolute top-6 -left-3 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-slate-50"
+  >
+    <svg class="text-dark h-3 w-3" fill="currentColor" viewBox="0 0 20 20"
+      ><path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"></path></svg
+    >
+  </span>
+  <div
+    class="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl"
+  >
+    <time
+      class="mb-2 block text-xs font-bold tracking-wider text-amber-700 uppercase"
+      >{item.dateRange}</time
+    >
+    <h3 class="text-dark mb-1 text-xl leading-tight font-extrabold">
+      {item.title}
+    </h3>
+    <p class="mb-4 text-sm font-semibold text-slate-500">{item.subtitle}</p>
+    <p
+      class="text-secondary max-w-[520px] text-base leading-relaxed font-normal"
+    >
+      {item.description}
+    </p>
+  </div>
+</div>

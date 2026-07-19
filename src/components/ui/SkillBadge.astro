@@ -1,0 +1,26 @@
+---
+import type { SkillItemType } from '../../data/skills';
+
+interface Props {
+  skill: SkillItemType;
+}
+
+const { skill } = Astro.props;
+---
+
+<div
+  class={`flex items-center gap-1.5 bg-white border border-slate-200/80 rounded-xl px-3 py-1.5 text-xs font-semibold text-slate-900 transition-colors ${skill.colorBorderClass} ${skill.colorBgClass} ${skill.colorTextClass}`}
+  title={skill.name}
+>
+  {
+    skill.iconUrl && (
+      <img
+        src={skill.iconUrl}
+        alt={skill.name}
+        class="h-4 w-4 object-contain"
+      />
+    )
+  }
+  {skill.iconSvg && <Fragment set:html={skill.iconSvg} />}
+  <span>{skill.name}</span>
+</div>

@@ -1,0 +1,126 @@
+---
+// Navbar.astro
+---
+
+<header
+  class="absolute top-0 left-0 z-50 flex w-full items-center bg-transparent"
+>
+  <div class="container">
+    <div class="relative flex items-center justify-between">
+      <div class="px-4">
+        <a
+          href="#home"
+          class="text-dark block py-6 text-2xl font-extrabold hover:opacity-90 lg:text-3xl"
+          >Hisyam<span class="text-primary">.</span></a
+        >
+      </div>
+      <div class="flex items-center px-4">
+        <button
+          id="hamburger"
+          name="hamburger"
+          type="button"
+          class="absolute right-4 block lg:hidden"
+        >
+          <span
+            class="hamburger origin-top-left transition duration-300 ease-in-out"
+          ></span>
+          <span class="hamburger transition duration-300 ease-in-out"></span>
+          <span
+            class="hamburger origin-bottom-left transition duration-300 ease-in-out"
+          ></span>
+        </button>
+        <nav
+          id="nav-menu"
+          class="absolute top-full right-1 hidden w-full max-w-48 rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:px-6 lg:py-0 lg:shadow-none"
+        >
+          <ul class="block lg:flex">
+            <li class="group">
+              <a
+                href="#home"
+                class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
+                >Home</a>
+            </li>
+            <li class="group">
+              <a
+                href="#about"
+                class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
+                >About me</a>
+            </li>
+            <li class="group">
+              <a
+                href="#skills"
+                class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
+                >Skills</a>
+            </li>
+            <li class="group">
+              <a
+                href="#portfolio"
+                class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
+                >Portfolio</a>
+            </li>
+            <li class="group">
+              <a
+                href="#contact"
+                class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
+                >Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('#hamburger');
+    const navMenu = document.querySelector('#nav-menu');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('hamburger-active');
+        navMenu.classList.toggle('hidden');
+      });
+
+      const navLinks = navMenu.querySelectorAll('.nav-link');
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('hamburger-active');
+          navMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    const handleScroll = () => {
+      const header = document.querySelector('header');
+      if (header) {
+        const fixedNav = header.offsetTop;
+        if (window.scrollY > fixedNav) {
+          header.classList.add('navbar-fixed');
+        } else {
+          header.classList.remove('navbar-fixed');
+        }
+      }
+
+      const navLinkEls = document.querySelectorAll('.nav-link');
+      const sectionEls = document.querySelectorAll('section');
+      let currentSection = 'home';
+
+      sectionEls.forEach((sectionEl) => {
+        if (window.scrollY >= sectionEl.offsetTop - 120) {
+          currentSection = sectionEl.id;
+        }
+      });
+
+      navLinkEls.forEach((navLinkEl) => {
+        navLinkEl.classList.remove('active');
+        if (navLinkEl.getAttribute('href')?.includes(currentSection)) {
+          navLinkEl.classList.add('active');
+        }
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+  });
+</script>

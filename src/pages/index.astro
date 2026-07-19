@@ -1,11 +1,79 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Skills from '../components/sections/Skills.astro';
+import Portfolio from '../components/sections/Portfolio.astro';
+import Contact from '../components/sections/Contact.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Portfolio />
+    <Contact />
+  </main>
+  <Footer />
+
+  <button
+    id="back-to-top"
+    class="bg-primary text-dark pointer-events-none fixed right-6 bottom-6 z-50 flex h-12 w-12 translate-y-4 items-center justify-center rounded-full opacity-0 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-amber-500"
+  >
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Scroll Reveal trigger
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    // Back to top scroll listener
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove(
+            'opacity-0',
+            'pointer-events-none',
+            'translate-y-4'
+          );
+          backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          backToTopBtn.classList.add(
+            'opacity-0',
+            'pointer-events-none',
+            'translate-y-4'
+          );
+          backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+        }
+      });
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  });
+</script>

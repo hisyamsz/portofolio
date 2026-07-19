@@ -1,0 +1,30 @@
+---
+import SkillCard from '../ui/SkillCard.astro';
+import { skillsData } from '../../data/skills';
+---
+
+<section id="skills" class="bg-white pt-28 pb-24">
+  <div class="container">
+    <div class="reveal mb-14 w-full px-4 text-center">
+      <h2
+        class="text-dark mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      >
+        My <span class="text-amber-700">Skills</span>
+      </h2>
+      <p class="text-secondary mx-auto max-w-2xl font-medium md:text-lg">
+        Teknologi dan perangkat yang saya gunakan untuk membangun solusi digital
+        yang luar biasa.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        skillsData.map((category, index) => (
+          <SkillCard
+            category={category}
+            className={`reveal ${index === 2 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

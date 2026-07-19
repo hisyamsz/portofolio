@@ -1,0 +1,89 @@
+---
+import TimelineItem from '../ui/TimelineItem.astro';
+import { timelineData } from '../../data/timeline';
+---
+
+<section id="about" class="bg-white pt-28 pb-24">
+  <div class="container">
+    <div class="flex flex-wrap items-center">
+      <div
+        class="reveal mb-10 flex w-full justify-center px-4 lg:mb-0 lg:w-5/12 lg:justify-start xl:pl-32"
+      >
+        <div class="relative text-center lg:text-left">
+          <h2
+            class="text-dark relative z-10 text-4xl leading-tight font-extrabold tracking-tight lg:text-7xl lg:tracking-tighter"
+          >
+            About <br class="hidden lg:block" />
+            <span class="relative inline-block">
+              Me
+              <span
+                class="bg-primary/40 absolute bottom-1 left-0 -z-10 h-3 w-full md:bottom-2 md:h-4"
+              ></span>
+            </span>
+          </h2>
+          <div
+            class="border-primary/20 absolute -top-10 -left-10 -z-10 hidden h-32 w-32 animate-pulse rounded-full border-4 lg:block"
+          >
+          </div>
+          <div
+            class="absolute -right-12 -bottom-8 -z-10 hidden h-32 w-32 bg-[radial-gradient(circle,#FEB237_2px,transparent_2px)] bg-size-[10px_10px] opacity-30 lg:block"
+          >
+          </div>
+        </div>
+      </div>
+      <div class="reveal w-full px-4 lg:w-7/12 lg:pl-12">
+        <div class="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
+          <p class="mb-4 font-bold text-amber-700 lg:text-lg">
+            "Technology is the tool, but ideas are the power."
+          </p>
+          <p class="text-secondary mb-8 leading-loose lg:text-lg">
+            Halo! Saya adalah mahasiswa Teknik Informatika yang memiliki
+            ketertarikan pada pengembangan aplikasi web, mulai dari membangun
+            antarmuka yang responsif hingga merancang logika back-end yang
+            efisien. Saya senang mempelajari teknologi baru, menerapkan praktik
+            pengembangan perangkat lunak yang baik, serta mengubah ide menjadi
+            solusi digital yang bermanfaat. Melalui setiap proyek yang saya
+            kerjakan, saya terus mengembangkan kemampuan dalam membangun
+            aplikasi yang fungsional, mudah digunakan, dan siap untuk kebutuhan
+            dunia nyata.
+          </p>
+          <div
+            class="mb-8 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center lg:justify-start"
+          >
+            <a
+              href="#portfolio"
+              class="text-dark border-primary bg-primary hover:shadow-primary/50 w-full rounded-full border-2 px-8 py-3.5 text-center font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
+              >View Works</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1A1LhJ0tuUyyNNiPXr5vgeleLSZQDTdaS/view?usp=sharing"
+              target="_blank"
+              class="border-primary hover:bg-primary hover:text-dark w-full rounded-full border-2 px-8 py-3.5 text-center font-bold text-amber-700 transition-all duration-300 hover:-translate-y-1 sm:w-auto"
+              >Download CV</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="mt-20 border-t border-slate-100 pt-20">
+      <div class="reveal mb-16 w-full px-4 text-center">
+        <h2
+          class="text-dark mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl"
+        >
+          Career <span class="text-amber-700">Timeline</span>
+        </h2>
+        <p class="text-secondary mx-auto max-w-2xl font-medium md:text-lg">
+          Perjalanan karir dan pengalaman profesional saya.
+        </p>
+      </div>
+
+      <div class="mx-auto w-full px-4 md:w-10/12 lg:w-8/12">
+        <div class="border-primary/30 relative ml-4 border-l-2 md:ml-8">
+          {timelineData.map((item) => <TimelineItem item={item} />)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
