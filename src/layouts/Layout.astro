@@ -1,4 +1,5 @@
 ---
+import SpeedInsights from '@vercel/speed-insights/astro';
 import '../styles/global.css';
 
 interface Props {
@@ -50,5 +51,6 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
     class="selection:bg-primary bg-slate-50 antialiased selection:text-white"
   >
     <slot />
+    <SpeedInsights />
   </body>
 </html>
