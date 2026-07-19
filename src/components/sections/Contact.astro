@@ -1,0 +1,375 @@
+---
+// Contact.astro
+---
+
+<section id="contact" class="bg-slate-50 pt-28 pb-24">
+  <div class="container">
+    <div class="reveal mb-16 w-full px-4 text-center">
+      <h2
+        class="text-dark mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      >
+        Get In <span class="text-amber-700">Touch</span>
+      </h2>
+      <p class="text-secondary mx-auto max-w-2xl font-medium md:text-lg">
+        Mari berkolaborasi! Jangan ragu untuk menghubungi saya untuk
+        mendiskusikan proyek atau peluang kerja sama.
+      </p>
+    </div>
+
+    <div
+      class="reveal mx-auto flex max-w-5xl flex-wrap overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl"
+    >
+      <div
+        class="bg-dark relative flex w-full flex-col justify-between overflow-hidden p-10 text-white lg:w-5/12"
+      >
+        <div class="relative z-10">
+          <h3 class="mb-4 text-3xl font-bold">Let's connect!</h3>
+          <p class="mb-8 leading-relaxed text-white/90">
+            Saya selalu terbuka untuk mendiskusikan pekerjaan desain produk atau
+            peluang kemitraan.
+          </p>
+
+          <div class="space-y-6">
+            <div
+              class="copy-trigger group relative flex cursor-pointer items-start"
+              data-copy="hisyam.s901@gmail.com"
+              title="Klik untuk menyalin"
+            >
+              <svg
+                class="mt-1 mr-4 h-6 w-6 transition-transform group-hover:scale-110 group-hover:text-amber-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <div>
+                <h4
+                  class="text-lg font-semibold transition-colors group-hover:text-amber-500"
+                >
+                  Email
+                </h4>
+                <p
+                  class="text-white/80 transition-colors group-hover:text-white"
+                >
+                  hisyam.s901@gmail.com
+                </p>
+              </div>
+              <div
+                class="text-dark copy-tooltip pointer-events-none absolute -top-10 left-12 translate-y-2 rounded-lg bg-white px-3 py-1.5 text-xs font-bold opacity-0 shadow-lg transition-all duration-300"
+              >
+                Tersalin! ✓
+                <div
+                  class="absolute -bottom-1 left-4 h-2 w-2 rotate-45 bg-white"
+                >
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg
+                class="mt-1 mr-4 h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div>
+                <h4 class="text-lg font-semibold">Lokasi</h4>
+                <p class="text-white/80">Tangerang, Banten, Indonesia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-white opacity-10"
+        >
+        </div>
+        <div
+          class="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-white opacity-10"
+        >
+        </div>
+      </div>
+
+      <div class="w-full p-10 lg:w-7/12 lg:p-14">
+        <form id="contact-form">
+          <div class="-mx-4 mb-6 flex flex-wrap">
+            <div class="mb-6 w-full px-4 md:mb-0 md:w-1/2">
+              <label for="name" class="text-dark mb-2 block text-sm font-bold"
+                >Nama Lengkap</label
+              >
+              <input
+                type="text"
+                id="name"
+                placeholder="John Doe"
+                autocomplete="off"
+                class="text-dark focus:ring-primary/50 focus:border-primary w-full rounded-xl border border-slate-200 bg-slate-50 p-4 transition-colors focus:ring-2 focus:outline-none"
+              />
+            </div>
+            <div class="w-full px-4 md:w-1/2">
+              <label for="email" class="text-dark mb-2 block text-sm font-bold"
+                >Alamat Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                placeholder="john@example.com"
+                autocomplete="off"
+                class="text-dark focus:ring-primary/50 focus:border-primary w-full rounded-xl border border-slate-200 bg-slate-50 p-4 transition-colors focus:ring-2 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="message" class="text-dark mb-2 block text-sm font-bold"
+              >Pesan Anda</label
+            >
+            <textarea
+              id="message"
+              placeholder="Tuliskan pesan Anda di sini..."
+              autocomplete="off"
+              class="text-dark focus:ring-primary/50 focus:border-primary h-40 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-4 transition-colors focus:ring-2 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="text-dark bg-primary hover:shadow-primary/50 inline-flex w-full items-center justify-center rounded-xl px-8 py-4 text-base font-bold shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-amber-500 md:w-auto"
+          >
+            <svg
+              id="btn-spinner"
+              class="text-dark mr-2 hidden h-5 w-5 animate-spin"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            <span id="btn-text">Kirim Pesan</span>
+            <svg
+              id="btn-icon"
+              class="ml-2 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </button>
+          <p
+            id="form-success"
+            class="mt-4 flex hidden items-center gap-2 text-sm font-semibold text-emerald-600"
+          >
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            Aplikasi email Anda telah dibuka! Silakan kirim pesan dari sana.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyTriggers = document.querySelectorAll('.copy-trigger');
+    copyTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', async () => {
+        const copyText = trigger.getAttribute('data-copy');
+        if (copyText) {
+          try {
+            await navigator.clipboard.writeText(copyText);
+            const tooltip = trigger.querySelector('.copy-tooltip');
+            if (tooltip) {
+              tooltip.classList.remove(
+                'opacity-0',
+                'translate-y-2',
+                'pointer-events-none'
+              );
+              tooltip.classList.add('opacity-100', 'translate-y-0');
+              setTimeout(() => {
+                tooltip.classList.remove('opacity-100', 'translate-y-0');
+                tooltip.classList.add(
+                  'opacity-0',
+                  'translate-y-2',
+                  'pointer-events-none'
+                );
+              }, 2000);
+            }
+          } catch (err) {
+            console.error('Failed to copy!', err);
+          }
+        }
+      });
+    });
+
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    if (!form) return;
+
+    function setError(id: string, msg: string) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add(
+        'border-red-500',
+        'ring-2',
+        'ring-red-300',
+        'focus:ring-red-300',
+        'focus:border-red-500'
+      );
+      el.classList.remove(
+        'border-slate-200',
+        'focus:ring-primary/50',
+        'focus:border-primary'
+      );
+
+      let hint = el.parentElement?.querySelector('.field-error');
+      if (!hint) {
+        hint = document.createElement('p');
+        hint.className =
+          'field-error mt-1.5 text-xs font-semibold text-red-500 animate-slide-in-up';
+        el.parentElement?.appendChild(hint);
+      }
+      hint.textContent = msg;
+    }
+
+    function clearError(id: string) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove(
+        'border-red-500',
+        'ring-2',
+        'ring-red-300',
+        'focus:ring-red-300',
+        'focus:border-red-500'
+      );
+      el.classList.add(
+        'border-slate-200',
+        'focus:ring-primary/50',
+        'focus:border-primary'
+      );
+      const hint = el.parentElement?.querySelector('.field-error');
+      if (hint) hint.remove();
+    }
+
+    ['name', 'email', 'message'].forEach((id) => {
+      document
+        .getElementById(id)
+        ?.addEventListener('input', () => clearError(id));
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nameEl = document.getElementById('name') as HTMLInputElement;
+      const emailEl = document.getElementById('email') as HTMLInputElement;
+      const messageEl = document.getElementById(
+        'message'
+      ) as HTMLTextAreaElement;
+
+      const name = nameEl.value.trim();
+      const email = emailEl.value.trim();
+      const message = messageEl.value.trim();
+
+      clearError('name');
+      clearError('email');
+      clearError('message');
+
+      let hasError = false;
+
+      if (!name) {
+        setError('name', 'Nama lengkap tidak boleh kosong.');
+        hasError = true;
+      }
+      if (!email) {
+        setError('email', 'Alamat email tidak boleh kosong.');
+        hasError = true;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setError('email', 'Format email tidak valid.');
+        hasError = true;
+      }
+      if (!message) {
+        setError('message', 'Pesan tidak boleh kosong.');
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      const submitBtn = document.getElementById(
+        'submit-btn'
+      ) as HTMLButtonElement;
+      const btnSpinner = document.getElementById('btn-spinner');
+      const btnIcon = document.getElementById('btn-icon');
+      const btnText = document.getElementById('btn-text');
+      const successMsg = document.getElementById('form-success');
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnSpinner) btnSpinner.classList.remove('hidden');
+      if (btnIcon) btnIcon.classList.add('hidden');
+      if (btnText) btnText.textContent = 'Mengirim...';
+
+      setTimeout(() => {
+        const to = 'hisyam.s901@gmail.com';
+        const subject = encodeURIComponent(`[Portofolio] Pesan dari ${name}`);
+        const body = encodeURIComponent(
+          `Halo Hisyam,\n\nNama   : ${name}\nEmail  : ${email}\n\nPesan :\n${message}\n\nSalam,\n${name}`
+        );
+
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
+        if (btnSpinner) btnSpinner.classList.add('hidden');
+        if (btnIcon) btnIcon.classList.remove('hidden');
+        if (btnText) btnText.textContent = 'Terkirim ✓';
+        if (successMsg) successMsg.classList.remove('hidden');
+
+        setTimeout(() => {
+          if (successMsg) successMsg.classList.add('hidden');
+          if (btnText) btnText.textContent = 'Kirim Pesan';
+          if (submitBtn) submitBtn.disabled = false;
+          form.reset();
+        }, 5000);
+      }, 800);
+    });
+  });
+</script>

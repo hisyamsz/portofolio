@@ -1,0 +1,108 @@
+---
+import PortfolioCard from '../ui/PortfolioCard.astro';
+import { getCollection, render } from 'astro:content';
+
+const projects = await getCollection('projects');
+// Sort by order ascending
+projects.sort((a, b) => a.data.order - b.data.order);
+
+const renderedProjects = await Promise.all(
+  projects.map(async (project) => {
+    const { Content } = await render(project);
+    return { ...project, Content };
+  })
+);
+---
+
+<section id="portfolio" class="bg-white pt-28 pb-24">
+  <div class="container">
+    <div class="reveal mb-16 w-full px-4 text-center">
+      <h2
+        class="text-dark mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      >
+        Latest <span class="text-amber-700">Works</span>
+      </h2>
+      <p class="text-secondary mx-auto max-w-2xl font-medium md:text-lg">
+        Berikut adalah beberapa proyek yang saya kerjakan untuk mengasah
+        keterampilan di bidang pengembangan web.
+      </p>
+    </div>
+
+    <div class="reveal mb-12 flex flex-wrap items-center justify-center gap-3">
+      <button
+        data-filter="all"
+        class="portfolio-filter-btn border-primary bg-primary text-dark hover:shadow-primary/30 rounded-full border-2 px-6 py-2 text-sm font-bold transition-all duration-300 hover:shadow-lg"
+      >
+        Semua
+      </button>
+      <button
+        data-filter="web-app"
+        class="portfolio-filter-btn hover:border-primary hover:text-dark hover:shadow-primary/10 rounded-full border-2 border-slate-200 px-6 py-2 text-sm font-bold text-slate-600 transition-all duration-300 hover:shadow-lg"
+      >
+        Web App
+      </button>
+      <button
+        data-filter="ui-practice"
+        class="portfolio-filter-btn hover:border-primary hover:text-dark hover:shadow-primary/10 rounded-full border-2 border-slate-200 px-6 py-2 text-sm font-bold text-slate-600 transition-all duration-300 hover:shadow-lg"
+      >
+        UI & Slicing
+      </button>
+    </div>
+
+    <div
+      class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"
+      id="portfolio-grid"
+    >
+      {
+        renderedProjects.map((project) => (
+          <div class="reveal">
+            <PortfolioCard
+              title={project.data.title}
+              image={project.data.image}
+              link={project.data.link}
+              category={project.data.category}
+            >
+              <project.Content />
+            </PortfolioCard>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.portfolio-filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card-el');
+
+    if (filterButtons.length && portfolioCards.length) {
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filterValue = btn.getAttribute('data-filter');
+
+          filterButtons.forEach((b) => {
+            b.classList.remove('bg-primary', 'text-dark', 'border-primary');
+            b.classList.add('border-slate-200', 'text-slate-600');
+          });
+          btn.classList.add('bg-primary', 'text-dark', 'border-primary');
+          btn.classList.remove('border-slate-200', 'text-slate-600');
+
+          portfolioCards.forEach((card) => {
+            const cardWrapper = card.closest('.reveal') || card;
+            const category = card.getAttribute('data-category');
+            if (filterValue === 'all' || category === filterValue) {
+              cardWrapper.classList.remove('hidden');
+              setTimeout(() => {
+                cardWrapper.classList.add('reveal-visible');
+              }, 50);
+            } else {
+              cardWrapper.classList.add('hidden');
+              cardWrapper.classList.remove('reveal-visible');
+            }
+          });
+        });
+      });
+    }
+  });
+</script>
