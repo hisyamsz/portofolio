@@ -19,6 +19,8 @@
           id="hamburger"
           name="hamburger"
           type="button"
+          aria-label="Toggle Menu"
+          aria-expanded="false"
           class="absolute right-4 block lg:hidden"
         >
           <span
@@ -38,31 +40,36 @@
               <a
                 href="#home"
                 class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
-                >Home</a>
+                >Home</a
+              >
             </li>
             <li class="group">
               <a
                 href="#about"
                 class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
-                >About me</a>
+                >About me</a
+              >
             </li>
             <li class="group">
               <a
                 href="#skills"
                 class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
-                >Skills</a>
+                >Skills</a
+              >
             </li>
             <li class="group">
               <a
                 href="#portfolio"
                 class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
-                >Portfolio</a>
+                >Portfolio</a
+              >
             </li>
             <li class="group">
               <a
                 href="#contact"
                 class="nav-link text-dark mx-8 flex py-2 text-base font-medium group-hover:text-amber-700 lg:text-lg"
-                >Contact</a>
+                >Contact</a
+              >
             </li>
           </ul>
         </nav>
@@ -78,8 +85,9 @@
 
     if (hamburger && navMenu) {
       hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('hamburger-active');
+        const isActive = hamburger.classList.toggle('hamburger-active');
         navMenu.classList.toggle('hidden');
+        hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       });
 
       const navLinks = navMenu.querySelectorAll('.nav-link');
@@ -87,6 +95,7 @@
         link.addEventListener('click', () => {
           hamburger.classList.remove('hamburger-active');
           navMenu.classList.add('hidden');
+          hamburger.setAttribute('aria-expanded', 'false');
         });
       });
     }

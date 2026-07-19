@@ -16,16 +16,16 @@ Personal portfolio website built with **Astro** and **Tailwind CSS v4**, showcas
 
 ## 🛠️ Tech Stack
 
-| Category       | Technology                                        |
-| :------------- | :------------------------------------------------ |
-| **Framework**  | [Astro](https://astro.build)                      |
-| **Styling**    | [Tailwind CSS v4](https://tailwindcss.com)        |
-| **Icons**      | [Lucide](https://lucide.dev) (`@lucide/astro`)    |
-| **Animation**  | [Motion](https://motion.dev)                      |
-| **Linting**    | [ESLint](https://eslint.org) + `eslint-plugin-astro` |
-| **Formatting** | [Prettier](https://prettier.io) + `prettier-plugin-astro` |
-| **Package Mgr**| [pnpm](https://pnpm.io)                           |
-| **Language**   | TypeScript                                        |
+| Category        | Technology                                                |
+| :-------------- | :-------------------------------------------------------- |
+| **Framework**   | [Astro](https://astro.build)                              |
+| **Styling**     | [Tailwind CSS v4](https://tailwindcss.com)                |
+| **Icons**       | [Lucide](https://lucide.dev) (`@lucide/astro`)            |
+| **Animation**   | [Motion](https://motion.dev)                              |
+| **Linting**     | [ESLint](https://eslint.org) + `eslint-plugin-astro`      |
+| **Formatting**  | [Prettier](https://prettier.io) + `prettier-plugin-astro` |
+| **Package Mgr** | [pnpm](https://pnpm.io)                                   |
+| **Language**    | TypeScript                                                |
 
 ## 📁 Project Structure
 

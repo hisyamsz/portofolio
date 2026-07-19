@@ -32,15 +32,15 @@ body {
   @apply font-semibold text-amber-700;
 }
 
-.hamburger-active>span:nth-child(1) {
+.hamburger-active > span:nth-child(1) {
   @apply rotate-45;
 }
 
-.hamburger-active>span:nth-child(2) {
+.hamburger-active > span:nth-child(2) {
   @apply scale-0;
 }
 
-.hamburger-active>span:nth-child(3) {
+.hamburger-active > span:nth-child(3) {
   @apply -rotate-45;
 }
 

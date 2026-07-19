@@ -7,17 +7,22 @@ interface Props {
 }
 
 const {
-  title = 'Hisyam Santoso | Web Developer',
+  title = 'Hisyam Santoso',
   description = 'Portofolio Web Developer Hisyam Santoso - Mahasiswa Teknik Informatika yang berfokus pada web development, frontend engineering, backend development, dan desain interaktif.',
 } = Astro.props;
+
+const siteUrl = Astro.site?.toString() || 'https://hisyamsz.github.io';
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
     <meta
       name="keywords"
       content="Hisyam Santoso, Web Developer, Frontend Engineer, Backend Developer, Portofolio IT, Teknik Informatika, LibraFlow LMS"

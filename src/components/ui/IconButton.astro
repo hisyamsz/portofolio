@@ -11,6 +11,7 @@ const { href, title } = Astro.props;
   href={href}
   target="_blank"
   title={title}
+  aria-label={title}
   class="hover:border-primary hover:bg-primary mx-2 flex h-9 w-9 items-center justify-center rounded-full border border-slate-400 text-slate-400 transition-colors duration-300 hover:text-white"
 >
   <slot />

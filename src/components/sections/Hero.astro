@@ -6,17 +6,17 @@
   <div class="container">
     <div class="flex flex-wrap items-center">
       <div class="mb-10 w-full px-4 md:w-1/2 xl:pl-32">
-        <h1
-          class="text-secondary reveal mb-3 text-sm font-bold tracking-widest uppercase"
+        <span
+          class="text-secondary reveal mb-3 block text-sm font-bold tracking-widest uppercase"
         >
           Hello
-        </h1>
-        <h2
+        </span>
+        <h1
           class="text-dark reveal mb-5 text-4xl font-extrabold md:text-5xl lg:text-6xl lg:leading-tight"
         >
           I'm <br class="hidden md:block" />
           <span id="auto-type" class="text-primary relative"></span>
-        </h2>
+        </h1>
         <p
           class="text-secondary reveal mb-8 max-w-md leading-relaxed font-medium lg:text-lg"
         >
@@ -95,7 +95,7 @@
 
     if (!isDeleting && charIndex < currentWord.length) {
       charIndex++;
-      setTimeout(typeEffect, 200);
+      setTimeout(typeEffect, 100);
     } else if (isDeleting && charIndex > 0) {
       charIndex--;
       setTimeout(typeEffect, 100);
