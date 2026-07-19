@@ -1,6 +1,6 @@
 ---
 title: 'LibraFlow LMS (Project KP)'
-image: '/img/libraflow-homepage.png'
+image: '../../assets/img/libraflow-homepage.png'
 link: 'https://frontend-kp-lac.vercel.app'
 category: 'web-app'
 order: 1

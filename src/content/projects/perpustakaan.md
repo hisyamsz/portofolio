@@ -1,6 +1,6 @@
 ---
 title: 'Sistem Perpustakaan (PKM)'
-image: '/img/fe-perpustakaan-home.png'
+image: '../../assets/img/fe-perpustakaan-home.png'
 link: 'https://github.com/hisyamsz/fe-perpustakaan'
 category: 'web-app'
 order: 2

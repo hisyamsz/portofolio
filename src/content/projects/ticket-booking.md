@@ -1,6 +1,6 @@
 ---
 title: 'Ticket Booking'
-image: '/img/hisyamsz.github.io_fe-tixin-teal.vercel.app.png'
+image: '../../assets/img/hisyamsz.github.io_fe-tixin-teal.vercel.app.png'
 link: 'https://fe-tixin-teal.vercel.app'
 category: 'web-app'
 order: 4

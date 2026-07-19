@@ -1,6 +1,6 @@
 ---
 title: 'Astro Blog'
-image: '/img/hisyamsz.github.io_astro-blog.png'
+image: '../../assets/img/hisyamsz.github.io_astro-blog.png'
 link: 'https://astro-blog-delta-beryl.vercel.app'
 category: 'web-app'
 order: 3

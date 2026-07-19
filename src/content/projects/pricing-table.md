@@ -1,6 +1,6 @@
 ---
 title: 'Pricing Table'
-image: '/img/hisyamsz.github.io_pricing-table_.png'
+image: '../../assets/img/hisyamsz.github.io_pricing-table_.png'
 link: 'https://hisyamsz.github.io/pricing-table/'
 category: 'ui-practice'
 order: 5

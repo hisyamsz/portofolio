@@ -1,6 +1,6 @@
 ---
 title: 'Form Validation'
-image: '/img/hisyamsz.github.io_form-validation_.png'
+image: '../../assets/img/hisyamsz.github.io_form-validation_.png'
 link: 'https://hisyamsz.github.io/form-validation/'
 category: 'ui-practice'
 order: 8

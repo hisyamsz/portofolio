@@ -1,5 +1,6 @@
 ---
-// Hero.astro
+import { Image } from 'astro:assets';
+import hisyamszImg from '../../assets/img/hisyamsz.png';
 ---
 
 <section id="home" class="pt-36 pb-24">
@@ -46,9 +47,10 @@
             class="tilt-element relative z-10 flex h-72 w-72 items-end justify-center overflow-hidden rounded-[30%_70%_70%_30%/30%_30%_70%_70%] bg-[#FFF3E0] shadow-xl sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[460px] lg:w-[460px]"
             style="transition: transform 0.15s ease-out;"
           >
-            <img
-              src="/img/hisyamsz.png"
+            <Image
+              src={hisyamszImg}
               alt="Hisyam Santoso"
+              loading="eager"
               class="z-20 w-full max-w-[320px] object-cover object-bottom md:max-w-[380px] lg:max-w-[420px]"
             />
           </div>

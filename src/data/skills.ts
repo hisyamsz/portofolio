@@ -67,6 +67,14 @@ export const skillsData: SkillCategoryType[] = [
         colorTextClass: 'hover:text-slate-900',
       },
       {
+        name: 'Astro.js',
+        iconUrl:
+          'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg',
+        colorBorderClass: 'hover:border-orange-500',
+        colorBgClass: 'hover:bg-orange-50',
+        colorTextClass: 'hover:text-orange-600',
+      },
+      {
         name: 'Tailwind CSS',
         iconUrl: '/img/tailwindcss-icon.svg',
         colorBorderClass: 'hover:border-cyan-500',
